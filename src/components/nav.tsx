@@ -3,7 +3,7 @@
 import { Icon } from "@iconify/react";
 import MotionIcon from "./ui/motion-icon";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Nav() {

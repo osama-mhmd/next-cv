@@ -1,6 +1,5 @@
 "use client";
 
-import { Icon } from "@iconify/react";
 import {
   Dialog,
   DialogContent,
