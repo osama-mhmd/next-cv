@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
+import Nav from "@/components/nav";
 
 const josefin_sans = Josefin_Sans({
   subsets: ["latin"],
@@ -22,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${josefin_sans.className} antialiased`}>
         <main className="max-w-3xl px-4 mx-auto flex flex-col gap-4">
-          {/* <Nav client:load /> */}
+          <Nav />
           {children}
         </main>
       </body>
