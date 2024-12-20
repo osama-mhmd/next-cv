@@ -1,3 +1,9 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About me | Osama Mohammed",
+};
+
 export default function About() {
   return (
     <section className="h-screen">
