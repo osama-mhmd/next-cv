@@ -1,18 +1,9 @@
 "use client";
 
 import { Icon } from "@iconify/react";
-// import { motion } from "motion/react";
-import MotionIcon from "@/components/ui/motion-icon";
-import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
-// const MotionIcon = motion(Icon);
-
 export default function Projects() {
-  const [] = useState();
-
-  useEffect(() => {}, []);
-
   return (
     <section className="h-screen">
       <div className="h-full pt-48 container flex flex-col justify-between items-center">
@@ -28,6 +19,9 @@ export default function Projects() {
               y: 0,
               x: 0,
               opacity: 1,
+            }}
+            style={{
+              width: 50,
             }}
           >
             <Icon icon="ic:round-rocket-launch" width={50} />

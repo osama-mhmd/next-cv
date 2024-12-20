@@ -12,7 +12,7 @@ export default function Nav() {
 
   return (
     <nav className="w-fit left-1/2 -translate-x-1/2 fixed top-4">
-      <ul className="list-none flex gap-1 rounded-[2rem] p-2 bg-gray-900 *:p-2 *:rounded-full *:bg-gray-800">
+      <ul className="list-none flex gap-1 rounded-[2rem] p-2 bg-gray-900 *:transition *:p-2 *:rounded-full *:bg-gray-800">
         <li>
           <Link href="/" className={pathname === "/" ? "active" : ""}>
             <Icon icon="typcn:home" width={26} />
