@@ -3,9 +3,12 @@ import fs from "node:fs";
 import path from "node:path";
 import { ReactElement } from "react";
 
+import rehypeShiki from "@shikijs/rehype";
+
 type Metadata = {
   title: string;
   description?: string;
+  isPublished?: string;
 };
 
 function parseFrontmatter(fileContent: string) {
@@ -74,10 +77,25 @@ export async function getPost(slug: string): Promise<PostProcess> {
       ok: true,
       ...(await compileMDX<Metadata>({
         source: rawContent,
-        options: { parseFrontmatter: true },
+        options: {
+          parseFrontmatter: true,
+          mdxOptions: {
+            rehypePlugins: [
+              [
+                // night-owl, catppuccin-mocha, houston is great == one-dark-pro == plastic
+                rehypeShiki,
+                {
+                  theme: "night-owl",
+                  langs: ["js", "jsx", "ts", "tsx", "json", "css", "html"],
+                },
+              ],
+            ],
+          },
+        },
       })),
     };
-  } catch {
+  } catch (e) {
+    console.log(e);
     return {
       ok: false,
     };

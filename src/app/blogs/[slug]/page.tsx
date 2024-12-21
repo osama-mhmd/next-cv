@@ -13,12 +13,19 @@ export default async function BlogPost({
 
   const post = await getPost(slug);
 
-  if (post.ok)
+  if (post.ok) {
+    // check if the post is published and IN PRODUCTION MODE
+    if (
+      post.frontmatter.isPublished !== "true" &&
+      process.env.NODE_ENV == "production"
+    )
+      return notFound();
+
     return (
       <section className="pt-36">
         <h1>{post.frontmatter.title}</h1>
         <article>{post.content}</article>
       </section>
     );
-  else return notFound();
+  } else return notFound();
 }

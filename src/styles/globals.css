@@ -68,22 +68,9 @@ textarea {
   @apply text-gray-500;
 }
 
-pre {
-  @apply rounded-md p-3 px-4;
-}
-
 a.link {
   @apply text-blue-400 underline;
 }
-
-pre .line.highlighted {
-  @apply bg-green-900/50;
-}
-pre .line.highlighted::before {
-  content: "+";
-  padding-right: 2px;
-}
-
 .info-card {
   animation: 1s forwards enter;
 }

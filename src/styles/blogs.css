@@ -4,3 +4,9 @@ h1 {
 code {
   @apply py-0.5 px-1.5 rounded-sm bg-gray-800;
 }
+pre code {
+  @apply p-0 bg-transparent;
+}
+pre {
+  @apply rounded-md p-3 px-4 my-2;
+}
