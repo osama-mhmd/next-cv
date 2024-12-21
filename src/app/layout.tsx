@@ -3,6 +3,7 @@ import { Josefin_Sans } from "next/font/google";
 import Nav from "@/components/nav";
 
 import "@/styles/globals.css";
+import Footer from "@/components/footer";
 
 const josefin_sans = Josefin_Sans({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
         <main className="max-w-3xl px-4 mx-auto flex flex-col gap-4">
           <Nav />
           {children}
+          <Footer />
         </main>
       </body>
     </html>

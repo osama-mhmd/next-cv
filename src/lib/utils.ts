@@ -2,6 +2,7 @@ import { compileMDX, CompileMDXResult } from "next-mdx-remote/rsc";
 import fs from "node:fs";
 import path from "node:path";
 import { ReactElement } from "react";
+import * as allComponents from "@/blogs-components";
 
 import rehypeShiki from "@shikijs/rehype";
 
@@ -92,6 +93,7 @@ export async function getPost(slug: string): Promise<PostProcess> {
             ],
           },
         },
+        components: allComponents,
       })),
     };
   } catch (e) {

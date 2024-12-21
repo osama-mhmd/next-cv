@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  @apply bg-transparent w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -10,10 +25,10 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: "Josefin Sans Variable", sans-serif;
-  @apply text-white bg-gray-950; /* overflow-hidden; */
-  background-image: url("/svgs/pattern.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  @apply text-white bg-gradient-to-tr from-gray-950 to-gray-900; /* overflow-hidden; */
+  /* background-image: url("/svgs/pattern.svg"); */
+  /* background-repeat: no-repeat;
+  background-size: cover; */
 }
 
 h1 {

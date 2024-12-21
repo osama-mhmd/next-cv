@@ -1,5 +1,8 @@
 h1 {
-  @apply text-4xl;
+  @apply text-3xl mb-4 text-white;
+}
+p {
+  @apply text-gray-300;
 }
 code {
   @apply py-0.5 px-1.5 rounded-sm bg-gray-800;
@@ -8,5 +11,8 @@ pre code {
   @apply p-0 bg-transparent;
 }
 pre {
-  @apply rounded-md p-3 px-4 my-2;
+  @apply rounded-md p-3 px-4 my-3;
+}
+.example {
+  @apply h-48 flex-col bg-gray-800 rounded-md p-4 my-3;
 }

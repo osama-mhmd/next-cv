@@ -4,22 +4,30 @@ description: In this blog we will learn how to keep the DOM alive until the anim
 ---
 
 If you are a frontend developer, you probably know that `motion` is a library that helps you to 
-animate your components. It is a great library, but it has a problem. When you use it, the DOM is not 
-updated until the animation is done. This means that if you have a lot of animations, the DOM will 
-be updated many times. This is not a good thing, because it will make your website slower.
+animate your components. But the most interesting thing in this library is that your animations are
+not removed from the DOM until the animation is done. Take an example:
 
 ```jsx
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
+import { useState } from "react";
 
 const Box = motion.custom(function Box({ show }) {
+  const [visible, setVisible] = useState(true);
+
   return (
-    <div
-      style={{
-        backgroundColor: show ? "red" : "blue",
-        width: 100,
-        height: 100,
-      }}
-    />
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 30 }}
+        >⚾</motion.div>
+      )}
+    </AnimatePresence>
   );
 });
 ```
+
+<Ball />
+
+You will notice that the `button` is not shifted up until the animation is finished
