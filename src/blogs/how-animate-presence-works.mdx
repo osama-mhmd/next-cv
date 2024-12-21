@@ -3,11 +3,16 @@ title: How `motion` keeps your animations alive however it should be removed fro
 description: In this blog we will learn how to keep the DOM alive until the animations are done.
 ---
 
-If you are a frontend developer, you probably know that `motion` is a library that helps you to 
-animate your components. But the most interesting thing in this library is that your animations are
-not removed from the DOM until the animation is done. Take an example:
+If you are a frontend developer, you probably know that `motion` is a library that helps you  
+animating your components. The interesting thing in this library is that the elements that have animations are
+not removed from the DOM until the animations are done. The problem here is that 
+this library takes about `116.5k (gzipped: 37.5k)`, which is a lot. So if you will only use simple 
+motions with AniamtePresence, you can use it without `motion`. 
 
-```jsx
+In this blog, we're going to make a simple animation with (`motion`, and `AnimatePresence`)
+and rebuild it with native Javascript
+
+```jsx {2,4}
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 
@@ -30,4 +35,4 @@ const Box = motion.custom(function Box({ show }) {
 
 <Ball />
 
-You will notice that the `button` is not shifted up until the animation is finished
+You will notice that the `Show/Hide Button` is not shifted up until the animation is finished

@@ -42,6 +42,9 @@ importers:
       '@shikijs/rehype':
         specifier: ^1.24.3
         version: 1.24.3
+      '@shikijs/transformers':
+        specifier: ^1.24.3
+        version: 1.24.3
       '@types/node':
         specifier: ^20
         version: 20.17.10
@@ -384,6 +387,9 @@ packages:
 
   '@shikijs/rehype@1.24.3':
     resolution: {integrity: sha512-H9PHKSjk0xY+ZGoqmWxjU6f6N6fT8YPchfdnV+8UVKKGbK/c4QZ/gr8X32q5mBx2GemGBZFF7z+VD5DA05UM5w==}
+
+  '@shikijs/transformers@1.24.3':
+    resolution: {integrity: sha512-Zdu+pVZwQkUy/KWIVJFQlSqZGvPySU6oYZ2TsBKp3Ay5m1XzykPSeiaVvAh6LtyaXYDLeCdA3LjZfHyTXFjGTw==}
 
   '@shikijs/types@1.24.3':
     resolution: {integrity: sha512-FPMrJ69MNxhRtldRk69CghvaGlbbN3pKRuvko0zvbfa2dXp4pAngByToqS5OY5jvN8D7LKR4RJE8UvzlCOuViw==}
@@ -2438,6 +2444,10 @@ snapshots:
       shiki: 1.24.3
       unified: 11.0.5
       unist-util-visit: 5.0.0
+
+  '@shikijs/transformers@1.24.3':
+    dependencies:
+      shiki: 1.24.3
 
   '@shikijs/types@1.24.3':
     dependencies:

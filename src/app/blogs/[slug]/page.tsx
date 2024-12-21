@@ -22,9 +22,9 @@ export default async function BlogPost({
       return notFound();
 
     return (
-      <section className="pt-36">
+      <section className="pt-36 blog">
         <h1>{post.frontmatter.title}</h1>
-        <article>{post.content}</article>
+        <article className="flex flex-col gap-3">{post.content}</article>
       </section>
     );
   } else return notFound();

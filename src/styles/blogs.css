@@ -1,5 +1,9 @@
-h1 {
+.blog h1 {
   @apply text-3xl mb-4 text-white;
+}
+.blog h1:first-child {
+  @apply mb-10 text-center bg-gradient-to-br from-blue-500 to-orange-500 
+    bg-clip-text text-transparent;
 }
 p {
   @apply text-gray-300;
@@ -7,12 +11,32 @@ p {
 code {
   @apply py-0.5 px-1.5 rounded-sm bg-gray-800;
 }
+
+/* Code highlighting AND transformers */
 pre code {
-  @apply p-0 bg-transparent;
+  @apply p-0 bg-transparent w-full block;
 }
 pre {
-  @apply rounded-md p-3 px-4 my-3;
+  @apply rounded-md py-3;
 }
 .example {
-  @apply h-48 flex-col bg-gray-800 rounded-md p-4 my-3;
+  @apply h-48 flex-col bg-gray-800 rounded-md p-4;
+}
+pre .line {
+  @apply px-[4ch] w-full inline-block;
+}
+pre .line.diff.add {
+  @apply bg-green-900/50 pl-[1.5ch];
+}
+pre .line.diff.add::before {
+  @apply content-["+"] pr-[1.5ch];
+}
+pre .line.diff.remove {
+  @apply bg-red-900/50 pl-[1.5ch];
+}
+pre .line.diff.remove::before {
+  @apply content-["-"] pr-[1.5ch];
+}
+pre .line.highlighted {
+  @apply bg-gray-800/50;
 }

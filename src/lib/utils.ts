@@ -5,6 +5,10 @@ import { ReactElement } from "react";
 import * as allComponents from "@/blogs-components";
 
 import rehypeShiki from "@shikijs/rehype";
+import {
+  transformerNotationDiff,
+  transformerNotationHighlight,
+} from "@shikijs/transformers";
 
 type Metadata = {
   title: string;
@@ -88,6 +92,10 @@ export async function getPost(slug: string): Promise<PostProcess> {
                 {
                   theme: "night-owl",
                   langs: ["js", "jsx", "ts", "tsx", "json", "css", "html"],
+                  transformers: [
+                    transformerNotationDiff(),
+                    transformerNotationHighlight(),
+                  ],
                 },
               ],
             ],
