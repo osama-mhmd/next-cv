@@ -17,7 +17,6 @@ export default {
           foreground: "#9ca3af",
           DEFAULT: "#4b5563",
         },
-        link: "#3b82f6",
       },
     },
   },

@@ -1,7 +1,8 @@
 "use client";
 
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "motion/react";
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 
 interface Context {
@@ -22,8 +23,15 @@ export function DialogTrigger({ children }: HaveChild) {
 
 export function DialogContent({ children }: HaveChild) {
   const { visible, setVisiblility } = useVisiblility();
+  const [mounted, setMounted] = useState(false);
 
-  return (
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {visible && (
         <motion.div
@@ -59,7 +67,8 @@ export function DialogContent({ children }: HaveChild) {
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }
 
